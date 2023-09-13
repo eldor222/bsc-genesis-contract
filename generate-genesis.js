@@ -44,6 +44,7 @@ require("./generate-crosschain");
 require("./generate-slash");
 require("./generate-relayerhub");
 require("./generate-staking");
+require("./generate-merkledistributor");
 
 program.version("0.0.1")
 program.option(
@@ -152,7 +153,13 @@ Promise.all([
     "staking",
     "contracts/Staking.sol",
     "Staking"
+  ),
+  compileContract(
+    "merkleDistributor",
+    "contracts/MerkleDistributor.sol",
+    "MerkleDistributor"
   )
+  
 ]).then(result => {
 
 program.option("--initLockedBNBOnTokenHub <initLockedBNBOnTokenHub>",
