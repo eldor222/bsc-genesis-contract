@@ -44,7 +44,7 @@ require("./generate-crosschain");
 require("./generate-slash");
 require("./generate-relayerhub");
 require("./generate-staking");
-require("./generate-merkledistributor");
+require("./generate-airdrop");
 
 program.version("0.0.1")
 program.option(
@@ -155,9 +155,9 @@ Promise.all([
     "Staking"
   ),
   compileContract(
-    "merkleDistributor",
-    "contracts/MerkleDistributor.sol",
-    "MerkleDistributor"
+    "airdrop",
+    "contracts/AirDrop.sol",
+    "AirDrop"
   )
   
 ]).then(result => {
